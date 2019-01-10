@@ -56,5 +56,9 @@ namespace proyectoFinalNET.Controllers
             
         }
 
+        public ActionResult VerMascotas() {
+            return View();
+        }
+
     }
 }

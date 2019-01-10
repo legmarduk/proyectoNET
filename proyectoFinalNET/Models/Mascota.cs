@@ -12,7 +12,7 @@ namespace proyectoFinalNET.Models
         public int codigo_tipo_mascota { get; set; }
         public DateTime fecha_incripcion { get; set; }
         public int numero_chip { get; set; }
-        public string  nombre_dueno { get; set; }
+        public string nombre_dueno { get; set; }
         public string rut_dueno { get; set; }
     }
 }
