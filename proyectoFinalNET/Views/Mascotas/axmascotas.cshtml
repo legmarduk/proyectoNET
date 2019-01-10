@@ -1,0 +1,19 @@
+﻿@using proyectoFinalNET.ViewModels;
+@model ListaMascotaView
+
+@{
+    Layout = null;
+}
+
+<div class="row">
+    <div class="offset-1">
+        <label>Listado de Mascotas </label>
+        <select class="form-control" id="tipoMascota">
+            <option value="0" selected>Seleccione Mascota</option>
+            @foreach (MascotasView mv in Model.mascotas)
+            {
+                <option value="@mv.codigo">@mv.nombre</option>
+            }
+        </select>
+    </div>
+</div>

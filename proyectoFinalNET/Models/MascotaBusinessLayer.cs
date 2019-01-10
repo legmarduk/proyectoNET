@@ -35,5 +35,22 @@ namespace proyectoFinalNET.Models
             }
           
         }
+
+        public List<Mascota> getMascotasDueno(int rut_dueno)
+        {
+            Mascotas_DAL conex = new Mascotas_DAL();
+
+            var rut = new SqlParameter("@rut_dueno", rut_dueno);
+            try
+            {
+                return conex.Database.SqlQuery<Mascota>("getMascotasDueno @rut_dueno", rut).ToList();
+            }
+            catch (Exception e)
+            {
+                Debug.Write(e.ToString());
+                return null;
+            }
+
+        }
     }
 }
