@@ -44,7 +44,6 @@ namespace proyectoFinalNET.Controllers
 
         public ActionResult nuevaMascota(Mascota m)
         {
-            
             Mascota test = new Mascota();
             test = m;
             Debug.Write("\n"+ test.nombre_mascota);
@@ -52,8 +51,35 @@ namespace proyectoFinalNET.Controllers
             mbl.insertarMascota(m);
 
                 return View();
-         
-            
+        }
+
+
+        public ActionResult getMascotasDueno(int rut)
+        {
+            List<Mascota> m = new List<Mascota>();
+            MascotaBusinessLayer mbl = new MascotaBusinessLayer();
+
+            m = mbl.getMascotasDueno(rut);
+            List<MascotasView> lmv = new List<MascotasView>();
+
+            foreach (Mascota mas in m)
+            {
+                MascotasView mv = new MascotasView();
+
+                mv.codigo = mas.codigo_mascota;
+                mv.nombre = mas.nombre_mascota;
+
+                lmv.Add(mv);
+            }
+            ListaMascotaView datos = new ListaMascotaView();
+            datos.mascotas = lmv;
+      
+            return View("axmascotas", datos);
+        }
+
+        public ActionResult ventanaHistorial()
+        {
+            return View("ventanaHistorial");
         }
 
     }

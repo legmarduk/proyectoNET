@@ -22,3 +22,35 @@
 
     });
 }
+
+function buscarMascotas(){
+    $(document).ready(function () {
+
+        var rut = $("#rut_dueno").val();
+
+        if (rut === "")
+        {
+            alert("No puedes Tener Campos Vacios");
+        }
+        else {
+
+            $.ajax({
+
+                url:'../Mascotas/getMascotasDueno',
+                type: 'post',
+                dataType: 'html',
+                contentType: 'application/x-www-form-urlencoded',
+                data: { "rut": rut },
+                success: function (response) {
+
+                    $("#divCombo").empty();
+                    $("#divCombo").html('' + response);
+                }
+
+            });
+
+        }
+
+        
+    });
+}
