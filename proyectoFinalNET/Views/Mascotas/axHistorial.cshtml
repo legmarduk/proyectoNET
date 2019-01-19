@@ -1,0 +1,30 @@
+﻿@using proyectoFinalNET.ViewModels;
+@model ListaHistorial
+
+@{
+    Layout = null;
+}
+
+@foreach (HistorialViewModels mv in Model.datosHistorial)
+{
+    <div class="card">
+        <div class="card-header">
+            <h2>@mv.titulo_visita</h2>       Fecha Vistita : @mv.fecha_visita
+        </div>
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <p> @mv.tema_visita</p>
+                <footer class="blockquote-footer">@mv.nombre_veterinaria</footer>
+            </blockquote>
+
+        </div>
+    </div>
+    <br />
+
+}
+
+
+
+
+
+

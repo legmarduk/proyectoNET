@@ -6,7 +6,7 @@
 }
 
 <div class="row">
-    <div class="offset-1">
+    <div class="container">
         <label>Listado de Mascotas </label>
         <select class="form-control" id="tipoMascota">
             <option value="0" selected>Seleccione Mascota</option>
@@ -15,5 +15,8 @@
                 <option value="@mv.codigo">@mv.nombre</option>
             }
         </select>
+        <br />
+        <button type="submit" id="historialMascota" class="btn btn-success" onclick="BuscarHistorial()"> Buscar Historial </button>
     </div>
+
 </div>
