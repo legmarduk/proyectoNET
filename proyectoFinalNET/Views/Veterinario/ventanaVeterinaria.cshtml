@@ -4,11 +4,34 @@
 }
 
 <div class="container">
+    <br />
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Formulario Nuevo Veterinario</div>
+                <div class="card-header"><h1>Formulario Nuevo Veterinario</h1></div>
                 <div class="card-body">
+                    <div class="offset-3 form-group form-inline">
+                        <label class="col-md-3">Nombre Veterinaria</label>
+                        <input class="form-control offset-1" id="name" />
+                    </div>
+                    <div class="offset-3 form-group form-inline">
+                        <label class="col-md-3">Dirección</label>
+                        <input class="form-control offset-1" id="dir" />
+                    </div>
+                    <div class="offset-3 form-group form-inline">
+                        <label class="col-md-3">Email</label>
+                        <input class="form-control offset-1" id="email" />
+                    </div>
+                    <div class="offset-3 form-group form-inline">
+                        <label class="col-md-3">Password</label>
+                        <input class="form-control offset-1" type="password" id="pass" />
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex flex-row-reverse">
+                        <button class="btn btn-primary"style="margin-left:5px;" onclick="GuardarVeterinario()">Guardar</button>
+                        <button class="btn btn-danger" onclick="VolverMenu();">Cancelar</button>
+                    </div>
                 </div>
             </div>
         </div>

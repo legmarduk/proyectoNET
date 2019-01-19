@@ -1,4 +1,5 @@
-﻿using System;
+﻿using proyectoFinalNET.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,17 @@ namespace proyectoFinalNET.Controllers
         public ActionResult Index()
         {
             return View("ventanaVeterinaria");
+        }
+
+        [HttpPost]
+        public ActionResult guardarVeterinario(string nombre, string dir, string email, string pass) {
+            Veterinaria vet = new Veterinaria();
+            vet.nombre_veterinaria = nombre;
+            vet.direccion_veterinaria = dir;
+            vet.email = email;
+            vet.password = pass;
+            
+            return View();
         }
     }
 }
