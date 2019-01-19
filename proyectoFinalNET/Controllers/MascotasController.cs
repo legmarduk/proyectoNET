@@ -82,6 +82,7 @@ namespace proyectoFinalNET.Controllers
             return View("ventanaHistorial");
         }
 
+<<<<<<< HEAD
 
         public ActionResult getHistorialMascota(int id)
         {
@@ -106,6 +107,10 @@ namespace proyectoFinalNET.Controllers
             datos.datosHistorial = listaPaso;
 
             return View("axHistorial", datos);
+=======
+        public ActionResult VerMascotas() {
+            return View();
+>>>>>>> 7750881352af7757870119d133c34b04b0fffaea
         }
 
     }
