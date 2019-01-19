@@ -16,7 +16,7 @@ function guardar() {
             data: { "nombre_mascota": nombre_mascota, "codigo_tipo_mascota": codigo_tipo_mascota, "numero_chip": numero_chip, "nombre_dueno": nombre_dueno, "rut_dueno": rut_dueno },
 
             success: function (response) {
-                alert("paso");
+                
             }
 
         });
@@ -27,10 +27,9 @@ function buscarMascotas(){
     $(document).ready(function () {
 
         var rut = $("#rut_dueno").val();
-
         if (rut === "")
         {
-            alert("No puedes Tener Campos Vacios");
+            alert("Rut vacio");
         }
         else {
 
@@ -42,12 +41,47 @@ function buscarMascotas(){
                 contentType: 'application/x-www-form-urlencoded',
                 data: { "rut": rut },
                 success: function (response) {
+<<<<<<< HEAD
+=======
+                
+>>>>>>> c2e916e44aae01b434caea77c6b77e1f7d72500b
                     $("#divCombo").empty();
                     $("#divCombo").html('' + response);
                 }
-
             });
         }
+<<<<<<< HEAD
+=======
+    });
+}
+
+function BuscarHistorial() {
+    
+    $(document).ready(function () {
+
+
+        var idMascota = $("#tipoMascota").val();
+
+        console.log(idMascota);
+        if (idMascota != 0) {
+            $.ajax({
+
+                url: '../Mascotas/getHistorialMascota',
+                type: 'get',
+                dataType: 'html',
+                contentType: 'application/x-www-form-urlencoded',
+                data: { "id": idMascota },
+                success: function (response) {
+                    console.log(response);
+                    $("#divHistorial").html('' + response);
+                }
+            });
+        }
+        else {
+            confirm("Debe Seleccionar una mascota");
+        }
+        
+>>>>>>> c2e916e44aae01b434caea77c6b77e1f7d72500b
     });
 }
 

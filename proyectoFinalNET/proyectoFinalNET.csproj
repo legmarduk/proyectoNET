@@ -164,6 +164,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\HistorialMascota.cs" />
+    <Compile Include="Models\HistorialMascotaBusinessLayer.cs" />
     <Compile Include="Models\Mascota.cs" />
     <Compile Include="Models\MascotaBusinessLayer.cs" />
     <Compile Include="Models\TipoMascota.cs" />
@@ -171,6 +172,8 @@
     <Compile Include="Models\Veterinaria.cs" />
     <Compile Include="Models\VeterinariaBusinessLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\HistorialViewModels.cs" />
+    <Compile Include="ViewModels\ListaHistorial.cs" />
     <Compile Include="ViewModels\ListaMascotaView.cs" />
     <Compile Include="ViewModels\ListaTipos.cs" />
     <Compile Include="ViewModels\MascotasView.cs" />
@@ -259,6 +262,15 @@
     <Content Include="Views\Veterinario\ventanaVeterinaria.cshtml" />
     <Content Include="Views\Mascotas\axmascotas.cshtml" />
     <Content Include="Views\Mascotas\ventanaHistorial.cshtml" />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    <Content Include="Views\Mascotas\axHistorial.cshtml" />
+=======
+    <Content Include="Views\Mascotas\getMascotasDueno.cshtml" />
+>>>>>>> b4f61665bc0b0a8073e531c8a8b7c3b1177ba02c
+>>>>>>> 7750881352af7757870119d133c34b04b0fffaea
+>>>>>>> c2e916e44aae01b434caea77c6b77e1f7d72500b
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

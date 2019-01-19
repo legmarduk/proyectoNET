@@ -82,9 +82,37 @@ namespace proyectoFinalNET.Controllers
             return View("ventanaHistorial");
         }
 
+<<<<<<< HEAD
+
+        public ActionResult getHistorialMascota(int id)
+        {
+            List <HistorialMascota> historial = new List<HistorialMascota>();
+            HistorialMascotaBusinessLayer h = new HistorialMascotaBusinessLayer();
+            historial = h.getHistorialMascotas(id);
+
+            List<HistorialViewModels> listaPaso = new List<HistorialViewModels>();
+
+            foreach (HistorialMascota ht in historial)
+            {
+                HistorialViewModels hvm = new HistorialViewModels();
+                hvm.fecha_visita = ht.fecha_visita;
+                hvm.titulo_visita = ht.titulo_visita;
+                hvm.tema_visita = ht.tema_visita;
+                hvm.nombre_veterinaria = ht.veterinario_visita;
+
+                listaPaso.Add(hvm);
+            }
+
+            ListaHistorial datos = new ListaHistorial();
+            datos.datosHistorial = listaPaso;
+
+            return View("axHistorial", datos);
+=======
         public ActionResult VerMascotas() {
             return View();
+>>>>>>> 7750881352af7757870119d133c34b04b0fffaea
         }
 
     }
+
 }
