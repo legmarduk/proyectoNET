@@ -16,7 +16,7 @@ function guardar() {
             data: { "nombre_mascota": nombre_mascota, "codigo_tipo_mascota": codigo_tipo_mascota, "numero_chip": numero_chip, "nombre_dueno": nombre_dueno, "rut_dueno": rut_dueno },
 
             success: function (response) {
-                
+                alert("Ingresada Correctamente");
             }
 
         });
@@ -41,17 +41,11 @@ function buscarMascotas(){
                 contentType: 'application/x-www-form-urlencoded',
                 data: { "rut": rut },
                 success: function (response) {
-<<<<<<< HEAD
-=======
-                
->>>>>>> c2e916e44aae01b434caea77c6b77e1f7d72500b
                     $("#divCombo").empty();
                     $("#divCombo").html('' + response);
                 }
             });
         }
-<<<<<<< HEAD
-=======
     });
 }
 
@@ -63,7 +57,7 @@ function BuscarHistorial() {
         var idMascota = $("#tipoMascota").val();
 
         console.log(idMascota);
-        if (idMascota != 0) {
+        if (idMascota !== 0) {
             $.ajax({
 
                 url: '../Mascotas/getHistorialMascota',
@@ -78,10 +72,8 @@ function BuscarHistorial() {
             });
         }
         else {
-            confirm("Debe Seleccionar una mascota");
+            alert("Debe Seleccionar una mascota");
         }
-        
->>>>>>> c2e916e44aae01b434caea77c6b77e1f7d72500b
     });
 }
 
@@ -91,10 +83,10 @@ function GuardarVeterinario() {
     var email = $("#email").val();
     var pass = $("#pass").val();
     if (nombre === '' || dir === '' || email === '' || pass === '') {
-        alert("complete los campos");
+        alert("complete TODOS los campos");
     } else {
         $.ajax({
-            url: '',
+            url: '../Veterinario/guardarVeterinario',
             type: 'post',
             dataType: 'html',
             contentType: 'application/x-www-form-urlencoded',

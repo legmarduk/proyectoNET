@@ -18,7 +18,7 @@ namespace proyectoFinalNET.Controllers
             List<TipoMascota> tipos = new List<TipoMascota>();
             TipoMascotaBusinessLayer tbl = new TipoMascotaBusinessLayer();
 
-            tipos = tbl.getTipoMascotas(); 
+            tipos = tbl.getTipoMascotas();
 
             List<TiposVista> ltv = new List<TiposVista>();
 
@@ -32,12 +32,12 @@ namespace proyectoFinalNET.Controllers
 
                 ltv.Add(tv); //agrego tv a lista TiposVista
 
-                Debug.Write("\n"+t.codigo_tipo_mascota + " " + t.nombre_tipo_mascota);
+                Debug.Write("\n" + t.codigo_tipo_mascota + " " + t.nombre_tipo_mascota);
             }
 
             ListaTipos datosVista = new ListaTipos();
             datosVista.tipos = ltv;
-            
+
             return View("Index", datosVista);
         }
 
@@ -46,11 +46,11 @@ namespace proyectoFinalNET.Controllers
         {
             Mascota test = new Mascota();
             test = m;
-            Debug.Write("\n"+ test.nombre_mascota);
+            Debug.Write("\n" + test.nombre_mascota);
             MascotaBusinessLayer mbl = new MascotaBusinessLayer();
             mbl.insertarMascota(m);
 
-                return View();
+            return View();
         }
 
 
@@ -73,7 +73,7 @@ namespace proyectoFinalNET.Controllers
             }
             ListaMascotaView datos = new ListaMascotaView();
             datos.mascotas = lmv;
-      
+
             return View("axmascotas", datos);
         }
 
@@ -82,11 +82,9 @@ namespace proyectoFinalNET.Controllers
             return View("ventanaHistorial");
         }
 
-<<<<<<< HEAD
-
         public ActionResult getHistorialMascota(int id)
         {
-            List <HistorialMascota> historial = new List<HistorialMascota>();
+            List<HistorialMascota> historial = new List<HistorialMascota>();
             HistorialMascotaBusinessLayer h = new HistorialMascotaBusinessLayer();
             historial = h.getHistorialMascotas(id);
 
@@ -107,12 +105,13 @@ namespace proyectoFinalNET.Controllers
             datos.datosHistorial = listaPaso;
 
             return View("axHistorial", datos);
-=======
-        public ActionResult VerMascotas() {
+        }
+
+        public ActionResult VerMascotas()
+        {
             return View();
->>>>>>> 7750881352af7757870119d133c34b04b0fffaea
+
         }
 
     }
-
 }

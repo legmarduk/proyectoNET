@@ -1,6 +1,7 @@
 ﻿using proyectoFinalNET.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -22,8 +23,13 @@ namespace proyectoFinalNET.Controllers
             vet.direccion_veterinaria = dir;
             vet.email = email;
             vet.password = pass;
+
+            VeterinariaBusinessLayer vbl = new VeterinariaBusinessLayer();
+
+            int respuesta;
+            respuesta = vbl.insertarVet(vet);
             
-            return View();
+            return View("ventanaVeterinaria");
         }
     }
 }
