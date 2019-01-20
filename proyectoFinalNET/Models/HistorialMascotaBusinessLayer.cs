@@ -26,7 +26,31 @@ namespace proyectoFinalNET.Models
                 Debug.Write(e);
                 return null;
             }
-        
+       
+        }
+
+        public int SetHistorial(HistorialMascota hm)
+        {
+            Mascotas_DAL conex = new Mascotas_DAL();
+
+            var idMascota = new SqlParameter("@id", hm.codigo_mascota);
+            var titulo = new SqlParameter("@titulo", hm.titulo_visita);
+            var detalle = new SqlParameter("@detalle", hm.tema_visita);
+            var codigoVet = new SqlParameter("@codigoVet", hm.codigo_veterinaria);
+            var nombreVet = new SqlParameter("@nombreVet",hm.veterinario_visita);
+
+            try
+            {
+                conex.Database.ExecuteSqlCommand("SEThistorial @id, @titulo, @detalle, @codigoVet, @nombreVet", idMascota, titulo, detalle, codigoVet, nombreVet);
+
+                return 1;
+
+            } catch (Exception e)
+            {
+                Debug.Write(e.ToString());
+                return 0;
+            }
+
             
         }
 

@@ -27,6 +27,8 @@ function buscarMascotas(){
     $(document).ready(function () {
 
         var rut = $("#rut_dueno").val();
+        var c = $("#carga").val();
+        console.log(c);
         if (rut === "")
         {
             alert("Rut vacio");
@@ -39,13 +41,17 @@ function buscarMascotas(){
                 type: 'post',
                 dataType: 'html',
                 contentType: 'application/x-www-form-urlencoded',
-                data: { "rut": rut },
+                data: { "rut": rut, "c": c },
                 success: function (response) {
                     $("#divCombo").empty();
                     $("#divCombo").html('' + response);
                 }
             });
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4bfd54c11c638ae1325ded1017f9b850ac0182d0
     });
 }
 
@@ -74,6 +80,10 @@ function BuscarHistorial() {
         else {
             alert("Debe Seleccionar una mascota");
         }
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 4bfd54c11c638ae1325ded1017f9b850ac0182d0
     });
 }
 
@@ -105,5 +115,41 @@ function GuardarVeterinario() {
 }
 /*Redirect paginas*/
 function VolverMenu() {
+
+}
+
+
+
+function guardarHistorial()
+{
+    var codigo = $("#tipoMascota").val();
+    var titulo = $("#tituloVisita").val();
+    var detalle = $("#detalleVisita").val();
+    var idvet = $("#idVeterinario").val();
+
+
+    if (codigo == "" || titulo == "" || detalle == "") {
+        alert("TINES CAMPOS VACIOS");
+    }
+    else
+    {
+        $.ajax({
+            url: '../Historial/guardarHistorial',
+            type: 'post',
+            dataType: 'html',
+            contentType: 'application/x-www-form-urlencoded',
+            data: {
+                "codigo": codigo,
+                "titulo": titulo,
+                "detalle": detalle,
+                "idvet": idvet
+            },
+            success: function (response) {
+                alert("Almacenado Correctamente");
+            }
+
+        });
+
+    }
 
 }

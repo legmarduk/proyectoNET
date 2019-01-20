@@ -1,0 +1,61 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <input type="hidden" class="form-control col-6" id="carga" value="">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-header">Formulario de Visita</h5>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <div class="input-group mb-3 offset-3">
+                            <label>Ingresa Rut Dueño</label>
+                        </div>
+
+                        <div class="input-group mb-3 offset-3">
+                            <input type="text" class="form-control col-6" placeholder="Ejemplo: 183879057" id="rut_dueno">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button" id="botonBuscar" onClick="buscarMascotas()"> Buscar </button>
+                            </div>
+                        </div>
+
+                        <div class="input-group mb-6 offset-3" id="divCombo"></div>
+
+                        <div id="titulo">
+                            <div class="input-group mb-3 offset-3">
+                                <label>Razon Visita</label>
+                            </div>
+
+                            <div class="input-group mb-3 offset-3">
+                                <input type="text" class="form-control col-6" id="tituloVisita">
+                            </div>
+                        </div>
+
+                        <div id="tema">
+                            <div class="input-group mb-3 offset-3">
+                                <label>Tema Visita</label>
+                            </div>
+
+                            <div class="input-group mb-3 offset-3">
+                                <textarea class="form-control col-6" id="detalleVisita" rows="3" cols="400"></textarea>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <input type="hidden" id="idVeterinario" value=""/>
+                <div class="input-group mb-3 offset-5">
+                    <button type="submit" id="guardarHistorial" onclick="guardarHistorial()" class="btn btn-outline-success">Guardar Visita</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
