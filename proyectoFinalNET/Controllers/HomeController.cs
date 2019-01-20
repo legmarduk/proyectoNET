@@ -26,5 +26,10 @@ namespace proyectoFinalNET.Controllers
 
             return View();
         }
+
+        public ActionResult Welcome()
+        {
+            return View("Welcome");
+        }
     }
 }

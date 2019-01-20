@@ -16,7 +16,10 @@
             }
         </select>
         <br />
+        @if (Model.carga == "a")
+        {
         <button type="submit" id="historialMascota" class="btn btn-success" onclick="BuscarHistorial()"> Buscar Historial </button>
+        }
     </div>
 
 </div>

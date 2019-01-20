@@ -54,7 +54,7 @@ namespace proyectoFinalNET.Controllers
         }
 
 
-        public ActionResult getMascotasDueno(int rut)
+        public ActionResult getMascotasDueno(int rut,string c)
         {
             List<Mascota> m = new List<Mascota>();
             MascotaBusinessLayer mbl = new MascotaBusinessLayer();
@@ -72,6 +72,7 @@ namespace proyectoFinalNET.Controllers
                 lmv.Add(mv);
             }
             ListaMascotaView datos = new ListaMascotaView();
+            datos.carga =c;
             datos.mascotas = lmv;
       
             return View("axmascotas", datos);
@@ -82,35 +83,44 @@ namespace proyectoFinalNET.Controllers
             return View("ventanaHistorial");
         }
 
-<<<<<<< HEAD
 
         public ActionResult getHistorialMascota(int id)
         {
-            List <HistorialMascota> historial = new List<HistorialMascota>();
+            List<HistorialMascota> historial = new List<HistorialMascota>();
             HistorialMascotaBusinessLayer h = new HistorialMascotaBusinessLayer();
             historial = h.getHistorialMascotas(id);
 
             List<HistorialViewModels> listaPaso = new List<HistorialViewModels>();
 
-            foreach (HistorialMascota ht in historial)
+            if (historial.Count() == 0)
             {
-                HistorialViewModels hvm = new HistorialViewModels();
-                hvm.fecha_visita = ht.fecha_visita;
-                hvm.titulo_visita = ht.titulo_visita;
-                hvm.tema_visita = ht.tema_visita;
-                hvm.nombre_veterinaria = ht.veterinario_visita;
-
-                listaPaso.Add(hvm);
+                return View("axVacio");
             }
+            else
+            {
+            
+                foreach (HistorialMascota ht in historial)
+                {
+                    HistorialViewModels hvm = new HistorialViewModels();
+                    hvm.fecha_visita = ht.fecha_visita;
+                    hvm.titulo_visita = ht.titulo_visita;
+                    hvm.tema_visita = ht.tema_visita;
+                    hvm.nombre_veterinaria = ht.veterinario_visita;
 
-            ListaHistorial datos = new ListaHistorial();
-            datos.datosHistorial = listaPaso;
+                    listaPaso.Add(hvm);
+                }
 
-            return View("axHistorial", datos);
-=======
-        public ActionResult VerMascotas() {
+                ListaHistorial datos = new ListaHistorial();
+                datos.datosHistorial = listaPaso;
+
+                return View("axHistorial", datos);
+            }
+        }
+
+        public ActionResult VerMascotas()
+        {
             return View();
->>>>>>> 7750881352af7757870119d133c34b04b0fffaea
+
         }
 
     }

@@ -58,5 +58,13 @@ namespace proyectoFinalNET.Models
 
             conex.Database.ExecuteSqlCommand("deleteVet @id", ide);
         }
+
+        public string getVeterinarianame(int id)
+        {
+            Mascotas_DAL conex = new Mascotas_DAL();
+            var ide = new SqlParameter("@id", id);
+
+            return conex.Database.SqlQuery<string>("getNombreVet @id", ide).First();
+        }
     }
 }
