@@ -1,6 +1,8 @@
 ﻿
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Visita";
+
 }
 
 <div class="container">
@@ -9,7 +11,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="card-header">Formulario de Visita</h5>
+                    <h5>Formulario de Visita</h5>
                 </div>
                 <div class="card-body">
                     <div>
@@ -50,7 +52,7 @@
                     </div>
 
                 </div>
-                <input type="hidden" id="idVeterinario" value=""/>
+                <input type="hidden" id="idVeterinario" value="" />
                 <div class="input-group mb-3 offset-5">
                     <button type="submit" id="guardarHistorial" onclick="guardarHistorial()" class="btn btn-outline-success">Guardar Visita</button>
                 </div>

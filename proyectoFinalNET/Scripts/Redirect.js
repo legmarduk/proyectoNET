@@ -48,10 +48,6 @@ function buscarMascotas(){
                 }
             });
         }
-<<<<<<< HEAD
-=======
-
->>>>>>> 4bfd54c11c638ae1325ded1017f9b850ac0182d0
     });
 }
 
@@ -80,10 +76,6 @@ function BuscarHistorial() {
         else {
             alert("Debe Seleccionar una mascota");
         }
-<<<<<<< HEAD
-=======
-        
->>>>>>> 4bfd54c11c638ae1325ded1017f9b850ac0182d0
     });
 }
 
@@ -114,11 +106,6 @@ function GuardarVeterinario() {
     }
 }
 /*Redirect paginas*/
-function VolverMenu() {
-
-}
-
-
 
 function guardarHistorial()
 {
@@ -128,7 +115,7 @@ function guardarHistorial()
     var idvet = $("#idVeterinario").val();
 
 
-    if (codigo == "" || titulo == "" || detalle == "") {
+    if (codigo === "" || titulo === "" || detalle === "") {
         alert("TINES CAMPOS VACIOS");
     }
     else

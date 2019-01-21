@@ -83,10 +83,6 @@ namespace proyectoFinalNET.Controllers
             return View("ventanaHistorial");
         }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 4bfd54c11c638ae1325ded1017f9b850ac0182d0
         public ActionResult getHistorialMascota(int id)
         {
             List<HistorialMascota> historial = new List<HistorialMascota>();
@@ -112,16 +108,11 @@ namespace proyectoFinalNET.Controllers
 
                     listaPaso.Add(hvm);
                 }
-
-<<<<<<< HEAD
-            return View("axHistorial", datos);
-=======
                 ListaHistorial datos = new ListaHistorial();
                 datos.datosHistorial = listaPaso;
 
                 return View("axHistorial", datos);
             }
->>>>>>> 4bfd54c11c638ae1325ded1017f9b850ac0182d0
         }
 
         public ActionResult VerMascotas()

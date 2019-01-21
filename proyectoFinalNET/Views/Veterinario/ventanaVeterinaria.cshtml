@@ -1,6 +1,7 @@
 ﻿
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Nuevo Veterinario";
 }
 
 <div class="container">
@@ -8,7 +9,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header"><h1>Formulario Nuevo Veterinario</h1></div>
+                <div class="card-header"><h5>Formulario Nuevo Veterinario</h5></div>
                 <div class="card-body">
                     <div class="offset-3 form-group form-inline">
                         <label class="col-md-3">Nombre Veterinaria</label>
@@ -30,7 +31,7 @@
                 <div class="card-footer">
                     <div class="d-flex flex-row-reverse">
                         <button class="btn btn-primary"style="margin-left:5px;" onclick="GuardarVeterinario()">Guardar</button>
-                        <button class="btn btn-danger" onclick="VolverMenu();">Cancelar</button>
+                        <button class="btn btn-danger" onclick="history.back();">Cancelar</button>
                     </div>
                 </div>
             </div>

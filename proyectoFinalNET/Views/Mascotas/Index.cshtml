@@ -2,73 +2,73 @@
 @model ListaTipos
 @{ 
     Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Nueva Mascota";
 }
 
-<div id="formulario" class="container" onload="prueba()">
+<div id="formulario" class="container">
 <br />
 <form id="form-mascota">
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <div class="form-group">
-                <h1>INGRESO DE MASCOTAS</h1>
-            </div>
+    <div class="card">
+        <div class="card-header">
+            <h5>Ingreso Mascota</h5>
         </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-6 offset-md-4">
-            <div class="form-group">
-                <label class="">Nombre Mascota</label>
-                <input type="text" id="nombreMascota" class="form-control" />
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-6 offset-md-4">
-            <label>Tipo Mascota</label>
-            <select class="form-control" id="tipoMascota">
-                <option value="0" selected>Seleccione Mascota</option>
-                @foreach (TiposVista tv in Model.tipos)
-                {
-                    <option value="@tv.codigo">@tv.tipo_mascota</option>
-                }
-            </select>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-6 offset-md-4">
-            <label>Numero chip</label>
-            <input type="text" id="numeroChip" class="form-control" />
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-6 offset-md-4">
-            <label>Nombre Dueño</label>
-            <input type="text" id="nombreDueno" class="form-control" />
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-6 offset-md-4">
-            <label>Rut Dueño</label>
-            <input type="text" id="rutDueno" class="form-control" placeholder=" ej:183879057" />
-        </div>
-    </div>
-    <br />
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
+        <div class="card-body">
             <div class="row">
-                <div class="col-md-5">
-                    <button type="submit" id="botonGuardar" class="btn btn-success btn-block" onclick="guardar()">Guardar</button>
-                </div>
-                <div class="col-md-5">
-                    <a  id="botonGuardar" class="btn btn-danger btn-block" href="#">Cancelar</a>
+                <div class="col-md-6 offset-md-4">
+                    <div class="form-group">
+                        <label class="">Nombre Mascota</label>
+                        <input type="text" id="nombreMascota" class="form-control" />
+                    </div>
                 </div>
             </div>
 
+            <div class="row">
+                <div class="col-md-6 offset-md-4">
+                    <label>Tipo Mascota</label>
+                    <select class="form-control" id="tipoMascota">
+                        <option value="0" selected>Seleccione Mascota</option>
+                        @foreach (TiposVista tv in Model.tipos)
+                        {
+                            <option value="@tv.codigo">@tv.tipo_mascota</option>
+                        }
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 offset-md-4">
+                    <label>Numero chip</label>
+                    <input type="text" id="numeroChip" class="form-control" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 offset-md-4">
+                    <label>Nombre Dueño</label>
+                    <input type="text" id="nombreDueno" class="form-control" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 offset-md-4">
+                    <label>Rut Dueño</label>
+                    <input type="text" id="rutDueno" class="form-control" placeholder=" ej:183879057" />
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <button type="submit" id="botonGuardar" class="btn btn-success btn-block" onclick="guardar()">Guardar</button>
+                        </div>
+                        <div class="col-md-5">
+                            <a id="botonGuardar" class="btn btn-danger btn-block" href="#">Cancelar</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
 </form>

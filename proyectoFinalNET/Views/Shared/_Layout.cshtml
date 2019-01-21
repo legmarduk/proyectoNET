@@ -4,23 +4,32 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    <title>@ViewBag.Title - Daniel Solar e Ian Lopez</title>
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     @Styles.Render("~/Content/css")
     <script src="~/Scripts/Redirect.js"></script>
     @Scripts.Render("~/bundles/modernizr")
+    <style>
+
+        body {
+            background-image: url('../../Content/imagenes/fondo.svg');
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: unset;
+        }
+    </style>
 </head>
 <body>
     <div id="menu" class="navbar navbar-expand-md">
         <div class="container">
-            <a class="navbar-brand" href="#">Veterinaria</a>
+            <a class="navbar-brand" href="../">Veterinaria</a>
             <div class="navbar-collapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="../Mascotas/">Ingresar Mascota</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Nueva Visita</a>
+                        <a class="nav-link" href="../Historial">Nueva Visita</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../Mascotas/ventanaHistorial">Historial</a>
@@ -35,9 +44,12 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Mascotas APP para el ramo de .NET por Daniel Solar e Ian Lopez</p>
-        </footer>
+        @if (@ViewBag.Title != "Veterinaria")
+        {
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Mascotas APP para el ramo de .NET por Daniel Solar e Ian Lopez</p>
+            </footer>
+        }
     </div>
 
     @Scripts.Render("~/bundles/jquery")
